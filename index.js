@@ -2,10 +2,14 @@ const defaultPrecision = 3;
 
 const clsFlipCard = "flipped";
 const card = document.getElementById("card") || unknownElement();
-const _frontface = getElementByClass("frontface") || unknownElement();
+const frontface = getElementByClass("frontface") || unknownElement();
+const backface = getElementByClass("backface") || unknownElement();
 
-card.addEventListener("click", _ => {
-    toggleClass(card, clsFlipCard);
+frontface.addEventListener("click", _ => {
+  toggleClass(card, clsFlipCard);
+});
+backface.addEventListener("click", _ => {
+  toggleClass(card, clsFlipCard);
 });
 
 
