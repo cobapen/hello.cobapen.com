@@ -66,7 +66,6 @@ a.blocklink:active {
 
 a.blocklink {
     transform-origin: center;
-    animation: shake-logo-anim 5s forwards;
 }
 
 a.blocklink:hover::after {
@@ -87,15 +86,3 @@ a.blocklink:hover::after {
 }
 
 
-
-@keyframes shake-logo-anim {
-    from { transform: rotate(0deg);}
-    20%  { transform: rotate(0deg);}
-    21%  { transform: rotate(1.5deg);}
-    22%  { transform: rotate(0deg);}
-    23%  { transform: rotate(-1.5deg);}
-    24%  { transform: rotate(0deg);}
-    25%  { transform: rotate(1.5deg);}
-    26%  { transform: rotate(0deg);}
-    to   { transform: rotate(0deg);}
-}
