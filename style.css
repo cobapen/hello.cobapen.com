@@ -28,11 +28,28 @@ div#contents {
     margin: 0 auto;
     padding: 0 2rem;
 
+    /* flip card effect */
     position: relative;
     perspective: 1000px;
     transform-style: preserve-3d;
+    
+    /* animation settings: rotate for flip, translate for tapping.
+       see front/backface rotation for tilt effect */
+    transition: 
+       rotate 0.5s linear,
+       translate 0.2s ease;
 
-    transition: all 0.5s linear;
+    /* tilt card effect properties */
+    --tiltX: 0deg;
+    --tiltY: 0deg;
+}
+
+#card.flipped {
+    rotate: y 180deg;
+}
+
+#card.clicked {
+    translate: 0 10px;
 }
 
 .frontface, .backface {
@@ -43,7 +60,12 @@ div#contents {
     background-image: url("./images/paper.png");
     
     overflow-y: hidden;
+
+    /* hide backface for flip-card effect */
     backface-visibility: hidden;
+
+    /* tilt animation transition*/
+    transition: rotate 0.2s linear;
 }
 
 .frontface {
@@ -59,13 +81,19 @@ div#contents {
 
 .backface {
     /* backface is initially hidden */
-    transform: rotateY(180deg);
+    rotate: y 180deg;
 
     padding: 1em;
 }
 
-.flipped {
-    transform: rotateY(180deg);
+.with-tilt .frontface {
+    rotate: x var(--tiltX);
+    rotate: y var(--tiltY);
+}
+
+.with-tilt .backface {
+    rotate: x var(--tiltX);
+    rotate: y calc(180deg + var(--tiltY));
 }
 
 .paper-main {
