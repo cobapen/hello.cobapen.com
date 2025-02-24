@@ -8,6 +8,18 @@ card.addEventListener("click", _ => {
     toggleClass(card, clsFlipCard);
 });
 
+
+// 
+// Tap Effect
+// 
+const clsTapCard = "clicked";
+frontface.addEventListener("mousedown", _ => {
+  card.classList.add(clsTapCard);
+});
+document.addEventListener("mouseup", _ => {
+  card.classList.remove(clsTapCard);
+});
+
 // 
 // Tilt Effect
 // 
