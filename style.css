@@ -48,7 +48,7 @@ div#contents {
     rotate: y 180deg;
 }
 
-#card.clicked {
+#card:active {
     translate: 0 10px;
 }
 
@@ -96,6 +96,7 @@ div#contents {
 
 .paper-main {
     flex-grow: 1;
+    user-select: none;
 }
 
 .paper-foot {
@@ -145,6 +146,7 @@ a.blocklink:hover::after {
     font-size: 2rem;
     font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 700;
+    user-select: text;
 }
 
 @keyframes bounceIn {
