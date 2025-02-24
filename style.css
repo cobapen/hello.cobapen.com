@@ -75,8 +75,6 @@ div#contents {
 
     /* show entering animation. */
     animation: bounceIn 0.8s ease-out;
-
-    box-shadow:5px 5px 5px #aaa;
 }
 
 .backface {
