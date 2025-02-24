@@ -1,5 +1,8 @@
 const defaultPrecision = 3;
 
+// 
+// Flip Effect
+// 
 const clsFlipCard = "flipped";
 const card = document.getElementById("card") || unknownElement();
 const frontface = getElementByClass("frontface") || unknownElement();
@@ -50,19 +53,23 @@ frontface.addEventListener("mouseleave", _ => {
 });
 
 
+
+// 
+// Utilities
+// 
 function getElementByClass(name) {
-const elements = document.getElementsByClassName(name);
-    return elements.length > 0 ? elements.item(0) : null;
+  const elements = document.getElementsByClassName(name);
+  return elements.length > 0 ? elements.item(0) : null;
 }
 
 function toggleClass(el, name) {
-if (el.classList.contains(name)) {
+  if (el.classList.contains(name)) {
     el.classList.remove(name);
-} else {
+  } else {
     el.classList.add(name);
-}
+  }
 }
 
 function unknownElement() {
-    return document.createElement("unknown");
+  return document.createElement("unknown");
 }
